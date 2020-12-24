@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-item',
@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemComponent implements OnInit {
 
-  isFront = false;
+
+  @Input() description: string;
+  @Input() title: string;
+  @Input() imagePath: string;
+  @Input() orderBtn = 'Order Now!';
+  @Input() detailsBtn = 'See More Details';
+
+  isFront = true;
 
   constructor() { }
 

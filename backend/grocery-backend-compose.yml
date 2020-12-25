@@ -1,0 +1,18 @@
+version: '3.6'
+
+services:
+  mysql-grocery:
+    image: mysql:8.0.22
+    container_name: mysql-grocery
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: inventory
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    networks:
+      - dev_network
+networks:
+  dev_network:

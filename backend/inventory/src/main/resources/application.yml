@@ -1,0 +1,9 @@
+server:
+  port: 9091
+keycloak:
+  realm: grocery
+  auth-server-url: http://localhost:8080/auth
+  ssl-required: external
+  resource: grocery-backend
+  use-resource-role-mappings: true
+  bearer-only: true

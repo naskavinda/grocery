@@ -24,6 +24,9 @@ frontend/shopping-frontend/.idea
 *.launch
 .settings/
 *.sublime-workspace
+*.iws
+*.iml
+*.ipr
 
 # IDE - VSCode
 .vscode/*

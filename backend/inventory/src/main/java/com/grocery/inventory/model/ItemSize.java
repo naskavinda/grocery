@@ -1,5 +1,7 @@
 package com.grocery.inventory.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,8 +14,9 @@ public class ItemSize {
     private double price;
     private double size;
     private String unit;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(referencedColumnName = "id", nullable = false)
+    @JsonIgnore
     private ItemColor itemColor;
 
     public int getId() {

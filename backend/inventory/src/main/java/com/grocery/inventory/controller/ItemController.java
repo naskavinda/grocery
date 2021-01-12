@@ -29,42 +29,9 @@ public class ItemController {
 
     @GetMapping()
     @RolesAllowed({"ViewItem"})
-    public ResponseEntity<List<ItemDTO>> getItems() {
+    public ResponseEntity<List<Item>> getItems() {
         List<Item> items = itemService.getAll();
-        List<ItemDTO> results = mapToItemDTO(items);
-        return ResponseEntity.ok(results);
-    }
-
-    private List<ItemDTO> mapToItemDTO(List<Item> items) {
-        List<ItemDTO> result = new ArrayList<>();
-        for (Item item : items) {
-            ItemDTO itemDTO = new ItemDTO();
-            itemDTO.setId(item.getId());
-            itemDTO.setName(item.getName());
-            itemDTO.setImagePath(item.getImagePath());
-            itemDTO.setRating(item.getRating());
-            itemDTO.setNumberOfRating(item.getNumberOfRating());
-            List<ItemColorDTO> itemColors = new ArrayList<>();
-            for (ItemColor itemColor : item.getItemColors()) {
-                ItemColorDTO itemColorDTO = new ItemColorDTO();
-                itemColorDTO.setId(itemColor.getId());
-                itemColorDTO.setColor(itemColor.getColor());
-                List<ItemSizeDTO> itemSizes = new ArrayList<>();
-                for (ItemSize itemSize : itemColor.getItemSizes()) {
-                    ItemSizeDTO itemSizeDTO = new ItemSizeDTO();
-                    itemSizeDTO.setId(itemSize.getId());
-                    itemSizeDTO.setSize(itemSize.getSize());
-                    itemSizeDTO.setPrice(itemSize.getPrice());
-                    itemSizeDTO.setUnit(itemSize.getUnit());
-                    itemSizes.add(itemSizeDTO);
-                }
-                itemColorDTO.setItemSizes(itemSizes);
-                itemColors.add(itemColorDTO);
-            }
-            itemDTO.setItemColors(itemColors);
-            result.add(itemDTO);
-        }
-        return result;
+        return ResponseEntity.ok(items);
     }
 
     @GetMapping("/{id}")

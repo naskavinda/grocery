@@ -1,5 +1,7 @@
 package com.grocery.inventory.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,8 +13,9 @@ public class ItemColor {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String color;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(referencedColumnName = "id", nullable = false)
+    @JsonIgnore
     private Item item;
 
     @OneToMany(mappedBy = "itemColor", fetch = FetchType.LAZY)

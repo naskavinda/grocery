@@ -1,10 +1,12 @@
-import {SizeChart} from './SizeChart';
+import {ItemColor} from './ItemColor';
 
 export class Item {
 
-  constructor(public itemName: string,
-              public description: string,
+  constructor(public id: number,
+              public name: string,
               public imagePath: string,
-              public sizeChart: SizeChart[]) {
+              public rating: number,
+              public numberOfRating: number,
+              public itemColors: ItemColor[]) {
   }
 }

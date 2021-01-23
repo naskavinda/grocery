@@ -16,6 +16,7 @@ import { ItemListComponent } from './item-list/item-list.component';
 import {ItemComponent} from './item-list/item/item.component';
 import {CardModule} from 'primeng/card';
 import { CardComponent } from './component/card/card.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 function initializeKeycloak(keycloak: KeycloakService): () => Promise<boolean> {
 
@@ -29,8 +30,8 @@ function initializeKeycloak(keycloak: KeycloakService): () => Promise<boolean> {
       initOptions: {
         onLoad: 'check-sso',
         checkLoginIframe: true,
-        silentCheckSsoRedirectUri:
-          window.location.origin + '/assets/silent-check-sso.html',
+        // silentCheckSsoRedirectUri:
+        //   window.location.origin + '/assets/silent-check-sso.html',
       },
     });
 }
@@ -43,7 +44,8 @@ function initializeKeycloak(keycloak: KeycloakService): () => Promise<boolean> {
     HeaderComponent,
     ItemListComponent,
     ItemComponent,
-    CardComponent
+    CardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

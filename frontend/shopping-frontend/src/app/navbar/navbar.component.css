@@ -1,0 +1,46 @@
+.navbar {
+  padding-top: 0.25rem; /* 0px does not look good on small screens */
+  padding-bottom: 0.25rem;
+  /*font-size: smaller;      !* Just because I am using big size font *!*/
+  line-height: 1em;
+}
+
+.nav-item > a {
+  color: white;
+}
+
+.search-input {
+  border-radius: 22px 0 0 22px;
+  height: 51px;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 0;
+}
+
+.search-btn {
+  border-radius: 0 22px 22px 0;
+  background: #f4f55b;
+  height: 50px;
+  font-size: 19px;
+  /*font-weight: bold;*/
+  padding-top: 0.90rem;
+  color: #5458e1;
+}
+
+.search-btn:hover {
+  background: #e6e720;
+  color: black;
+}
+
+.wish-list {
+  border-radius: 22px;
+  background: #0daae2;
+  height: 50px;
+}
+
+.shopping-cart {
+  border-radius: 22px;
+  background: #0daae2;
+  height: 50px;
+}

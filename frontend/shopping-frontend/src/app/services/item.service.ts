@@ -1,20 +1,20 @@
 import {Injectable} from '@angular/core';
 import {Item} from '../model/Item';
-import {SizeChart} from '../model/SizeChart';
+import {ItemSize} from '../model/ItemSize';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemService {
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
-  public getItemList(): Item[] {
-    return [
-      new Item('t shirt',
-      'this is test description for the item',
-      './assert/img/s001.jpg',
-        [new SizeChart('sad', 'dsa', 'dsa')])];
+  public getItems(): Observable<Item[]> {
+    // const headers = new HttpHeaders({'Authorization': this.token, 'Content-Type': 'application/json'});
+    const url = 'http://localhost:9091/api/items';
+    return this.http.get<Item[]>(url);
   }
 }

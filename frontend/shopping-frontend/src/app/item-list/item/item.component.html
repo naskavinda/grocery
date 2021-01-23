@@ -1,83 +1,12 @@
-
-<!--<div class="card" style="width: 18rem; height: 34rem">
-  <h4 class="card-title text-center pt-1">{{title}}</h4>
-  <img class="card-img-top border-top" height="300px" src="{{imagePath}}" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text short-text ">{{description}}</p>
-    &lt;!&ndash;    <div>&ndash;&gt;
-    <h5 class="mb-2 text-right">price : $80</h5>
-    &lt;!&ndash;    </div>&ndash;&gt;
-  </div>
-  <div class="card-footer border-success btn btn-outline-success">{{orderBtn}}</div>
-</div>-->
-
-<div class="pl-3 pr-3 pt-3" [class]="{'card-container': isFront, 'card-container-hover': !isFront}">
-  <div class="card-flip">
-    <!-- Card Front -->
-    <div class="card front">
-      <div class="card" style="width: 20rem; height: 34rem">
-        <h4 class="card-title text-center pt-1">{{title}}</h4>
-        <a style="position: absolute; margin-left: 285px; margin-top: 10px;" (click)="isFront=!isFront">
-          <em class="pi pi-refresh" style="font-size: 1.5rem"></em>
-        </a>
-        <img class="card-img-top border-top" height="300px" src="{{imagePath}}" alt="Card image cap">
-        <div class="card-body">
-          <p class="card-text short-text ">{{description}}</p>
-          <h5 class="mb-2 text-right">price : $80</h5>
-        </div>
-        <div class="card-footer border-success btn btn-outline-success">{{orderBtn}}</div>
-      </div>
+<div class="pl-3 pr-3 pt-3">
+  <div class="card">
+    <div class="mr-auto ml-auto">
+      <img class="card-img-top border-top" src="./{{item.imagePath}}" alt="Card image cap">
     </div>
-    <!-- End Card Front -->
-
-    <!-- Card Back -->
-    <div class="card back">
-      <div class="card" style="width: 20rem; height: 34rem">
-        <h4 class="card-title text-center pt-1">{{title}}</h4>
-        <a style="position: absolute; margin-left: 285px; margin-top: 10px;" (click)="isFront=!isFront">
-          <em class="pi pi-refresh" style="font-size: 1.5rem"></em>
-        </a>
-        <div class="card-body">
-          <p class="card-text ">{{description}}</p>
-          <h5 class="mb-2 text-right">price : $80</h5>
-          <div class="text-center pt-3">
-            <table class="table table-striped border" style="font-size: 12px">
-              <caption class="text-center">Dress shirt size chart for men</caption>
-              <thead>
-              <tr>
-                <td>Alpha Sizing</td>
-                <td>Neck (Inch)</td>
-                <td>Chest (Inch)</td>
-              </tr>
-              </thead>
-              <tbody>
-              <tr>
-                <th>M</th>
-                <th>15" - 15 1/2"</th>
-                <th>38" - 40"</th>
-              </tr>
-              <tr>
-                <th>L</th>
-                <th>16" - 16 1/2"</th>
-                <th>41" - 43"</th>
-              </tr>
-              <tr>
-                <th>XL</th>
-                <th>17" - 17 1/2"</th>
-                <th>44" - 46"</th>
-              </tr>
-              <tr>
-                <th>XXL</th>
-                <th>18" - 18 1/2"</th>
-                <th>47" - 49"</th>
-              </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="card-footer border-success btn btn-outline-success">{{detailsBtn}}</div>
-      </div>
+    <div class="mt-2 mx-2 d-flex justify-content-between">
+      <div><h5>LKR 80.00</h5></div>
+      <div style="color: #28a745">In Stock</div>
+      <div style="color: #ff4747">44% off</div>
     </div>
-    <!-- End Card Back -->
   </div>
 </div>

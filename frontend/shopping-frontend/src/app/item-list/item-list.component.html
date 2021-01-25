@@ -1,8 +1,6 @@
-<div class="row mr-auto ml-auto">
-  <app-item title="Card title"
-            imagePath="./assets/img/s001.jpg"
-            description="This is the description of the item. this shirt is made by best fabric in the word. So it is less weight and more comfortable."
-            *ngFor="let item of items"
-            [item]="item">
+<app-item-gallery>
+  <button class="previous-button" *ngIf="showPrevious(-1)" (click)="changeShowList(-1)"><i class="pi pi-chevron-left"></i></button>
+  <app-item *ngFor="let item of showingItemList" [item]="item">
   </app-item>
-</div>
+  <button class="next-button" *ngIf="showNext(1)" (click)="changeShowList(+1)"><i class="pi pi-chevron-right"></i></button>
+</app-item-gallery>

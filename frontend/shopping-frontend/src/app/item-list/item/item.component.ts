@@ -8,13 +8,7 @@ import {Item} from '../../model/Item';
 })
 export class ItemComponent implements OnInit {
 
-
   @Input() item: Item;
-  @Input() description: string;
-  @Input() title: string;
-  @Input() imagePath: string;
-  @Input() orderBtn = 'Order Now!';
-  @Input() detailsBtn = 'See More Details';
 
   constructor() { }
 

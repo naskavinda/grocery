@@ -7,6 +7,8 @@ export class Item {
               public imagePath: string,
               public rating: number,
               public numberOfRating: number,
+              public minPrice: number,
+              public maxPrice: number,
               public itemColors: ItemColor[]) {
   }
 }

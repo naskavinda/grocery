@@ -17,6 +17,7 @@ import {ItemComponent} from './item-list/item/item.component';
 import {CardModule} from 'primeng/card';
 import { CardComponent } from './component/card/card.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ItemGalleryComponent } from './item-list/item-gallery/item-gallery.component';
 
 function initializeKeycloak(keycloak: KeycloakService): () => Promise<boolean> {
 
@@ -45,7 +46,8 @@ function initializeKeycloak(keycloak: KeycloakService): () => Promise<boolean> {
     ItemListComponent,
     ItemComponent,
     CardComponent,
-    NavbarComponent
+    NavbarComponent,
+    ItemGalleryComponent
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,8 @@ public class Item {
     private String imagePath;
     private double rating;
     private int numberOfRating;
+    private double minPrice;
+    private double maxPrice;
 
     @OneToMany(mappedBy = "item", fetch = FetchType.LAZY)
     private List<ItemColor> itemColors;
@@ -68,6 +70,22 @@ public class Item {
         this.itemColors = itemColors;
     }
 
+    public double getMaxPrice() {
+        return maxPrice;
+    }
+
+    public void setMaxPrice(double maxPrice) {
+        this.maxPrice = maxPrice;
+    }
+
+    public double getMinPrice() {
+        return minPrice;
+    }
+
+    public void setMinPrice(double minPrice) {
+        this.minPrice = minPrice;
+    }
+
     @Override
     public String toString() {
         return "Item{" +
@@ -76,6 +94,8 @@ public class Item {
                 ", imagePath='" + imagePath + '\'' +
                 ", rating=" + rating +
                 ", numberOfRating=" + numberOfRating +
+                ", minPrice=" + minPrice +
+                ", maxPrice=" + maxPrice +
                 ", itemColors=" + itemColors +
                 '}';
     }

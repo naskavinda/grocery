@@ -1,11 +1,6 @@
 package com.grocery.inventory.controller;
 
-import com.grocery.inventory.dto.ItemColorDTO;
-import com.grocery.inventory.dto.ItemDTO;
-import com.grocery.inventory.dto.ItemSizeDTO;
 import com.grocery.inventory.model.Item;
-import com.grocery.inventory.model.ItemColor;
-import com.grocery.inventory.model.ItemSize;
 import com.grocery.inventory.service.ItemService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.security.RolesAllowed;
-import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin("*")

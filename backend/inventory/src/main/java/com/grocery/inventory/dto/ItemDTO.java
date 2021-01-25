@@ -9,6 +9,8 @@ public class ItemDTO {
     private String imagePath;
     private double rating;
     private int numberOfRating;
+    private double minPrice;
+    private double maxPrice;
     private List<ItemColorDTO> itemColors;
 
     public int getId() {
@@ -59,6 +61,22 @@ public class ItemDTO {
         this.itemColors = itemColors;
     }
 
+    public double getMinPrice() {
+        return minPrice;
+    }
+
+    public void setMinPrice(double minPrice) {
+        this.minPrice = minPrice;
+    }
+
+    public double getMaxPrice() {
+        return maxPrice;
+    }
+
+    public void setMaxPrice(double maxPrice) {
+        this.maxPrice = maxPrice;
+    }
+
     @Override
     public String toString() {
         return "ItemDTO{" +
@@ -67,6 +85,8 @@ public class ItemDTO {
                 ", imagePath='" + imagePath + '\'' +
                 ", rating=" + rating +
                 ", numberOfRating=" + numberOfRating +
+                ", minPrice=" + minPrice +
+                ", maxPrice=" + maxPrice +
                 ", itemColors=" + itemColors +
                 '}';
     }

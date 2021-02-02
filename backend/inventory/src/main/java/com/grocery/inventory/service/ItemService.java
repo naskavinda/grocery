@@ -4,6 +4,8 @@ import com.grocery.inventory.model.Item;
 import com.grocery.inventory.repository.ItemRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ItemService extends CrudServiceImpl<Item, Integer> {
 
@@ -16,5 +18,13 @@ public class ItemService extends CrudServiceImpl<Item, Integer> {
 
     public void update(Item item) {
         this.save(item);
+    }
+
+    public List<Item> getItemsByGroupId(String groupId) {
+        if (groupId == null) {
+            return super.getAll();
+        } else {
+            return itemRepository.findItemsByItemGroupGroupCode(groupId);
+        }
     }
 }

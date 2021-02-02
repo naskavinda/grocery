@@ -1,6 +1,8 @@
 package com.grocery.inventory.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -18,6 +20,10 @@ public class Item {
     private int numberOfRating;
     private double minPrice;
     private double maxPrice;
+
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "id", nullable = false)
+    private ItemGroup itemGroup;
 
     @OneToMany(mappedBy = "item", fetch = FetchType.LAZY)
     private List<ItemColor> itemColors;
@@ -86,6 +92,14 @@ public class Item {
         this.minPrice = minPrice;
     }
 
+    public ItemGroup getItemGroup() {
+        return itemGroup;
+    }
+
+    public void setItemGroup(ItemGroup itemGroups) {
+        this.itemGroup = itemGroups;
+    }
+
     @Override
     public String toString() {
         return "Item{" +
@@ -96,7 +110,7 @@ public class Item {
                 ", numberOfRating=" + numberOfRating +
                 ", minPrice=" + minPrice +
                 ", maxPrice=" + maxPrice +
-                ", itemColors=" + itemColors +
+                ", itemGroups=" + itemGroup +
                 '}';
     }
 }

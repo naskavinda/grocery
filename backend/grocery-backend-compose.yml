@@ -6,7 +6,7 @@ services:
     container_name: mysql-grocery
     volumes:
       - ./data/mysql:/var/lib/mysql
-    restart: always
+#    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: inventory

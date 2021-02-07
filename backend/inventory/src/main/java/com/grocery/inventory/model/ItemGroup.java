@@ -15,7 +15,7 @@ public class ItemGroup {
 
     private String groupCode;
     private String groupName;
-    private String status;
+    private int status;
     private String priority;
 
     @OneToMany(mappedBy = "itemGroup", fetch = FetchType.LAZY)
@@ -38,11 +38,11 @@ public class ItemGroup {
         this.groupName = groupName;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 

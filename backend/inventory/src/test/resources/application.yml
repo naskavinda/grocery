@@ -1,0 +1,19 @@
+server:
+  port: 9091
+keycloak:
+  enabled: false
+  realm: grocery
+  auth-server-url: http://localhost:8080/auth
+  ssl-required: external
+  resource: grocery-backend
+  use-resource-role-mappings: true
+  bearer-only: true
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3307/inventory
+    username: root
+    password: password
